@@ -64,16 +64,16 @@ jobs:
   
         - name: Write the report
           run: |
-          S="$GITHUB_STEP_SUMMARY"
-          echo "## CI Report" >> "$S"
-          echo "" >> "$S"
-          echo "- Build ID: ${{ needs.lint.outputs.build_id }}" >> "$S"
-          echo "- Commit: ${{ github.sha }}" >> "$S"
-          echo "- Started by: ${{ github.actor }}" >> "$S"
-          echo "- Branch: ${{ github.ref_name }}" >> "$S"
-          echo "" >> "$S"
-          echo "### Artifacts collected" >> "$S"
-          ls all-results | sed 's/^/- /' >> "$S"
+            S ="$GITHUB_STEP_SUMMARY"
+            echo "## CI Report" >> "$S"
+            echo "" >> "$S"
+            echo "- Build ID: ${{ needs.lint.outputs.build_id }}" >> "$S"
+            echo "- Commit: ${{ github.sha }}" >> "$S"
+            echo "- Started by: ${{ github.actor }}" >> "$S"
+            echo "- Branch: ${{ github.ref_name }}" >> "$S"
+            echo "" >> "$S"
+            echo "### Artifacts collected" >> "$S"
+            ls all-results | sed 's/^/- /' >> "$S"
 
 
 
