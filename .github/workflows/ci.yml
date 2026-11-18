@@ -54,7 +54,7 @@ jobs:
           path: test-output.txt
 
   report:
-      needs: [test]
+      needs: [lint, test]
       runs-on: ubuntu-latest
       steps:
         - name: Download every artifact from this run
