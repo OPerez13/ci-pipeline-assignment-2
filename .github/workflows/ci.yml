@@ -53,19 +53,19 @@ jobs:
           name: test-results-${{ matrix.os }}-node${{ matrix.node }}
           path: test-output.txt
 
-report:
-    needs: [lint, test]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download every artifact from this run
-        uses: actions/download-artifact@v4
-        with:
-          path: all-results
- 
-      - name: Show what we collected
-        run: |
-          echo "Build ID from the lint job: ${{ needs.lint.outputs.build_id }}"
-          ls -R all-results
+  report:
+      needs: [lint, test]
+      runs-on: ubuntu-latest
+      steps:
+        - name: Download every artifact from this run
+          uses: actions/download-artifact@v4
+          with:
+            path: all-results
+  
+        - name: Show what we collected
+          run: |
+            echo "Build ID from the lint job: ${{ needs.lint.outputs.build_id }}"
+            ls -R all-results
 
 
 
