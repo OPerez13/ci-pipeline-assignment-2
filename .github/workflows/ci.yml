@@ -19,7 +19,8 @@ jobs:
   test:
     needs: lint
     runs-on: ${{ matrix.os }}
-    strategy:
+    strategy: 
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
         node: ['18', '20', '22']
